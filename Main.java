@@ -2,11 +2,15 @@
 public class Main {
 
 	public static void main(String[] args) {
-		System.out.println("this is a test");
-		Circle Circle1 = new Circle (5);
-		System.out.println("The area of Circle 1 is " +Circle1.getArea());
+		int [][] Map = new int [100][100];
+		
+		Map[0][0] = 10;
+		String Biomename = "Plains";
 		
 		
+		
+		BiomesGen StarterBiome = new BiomesGen (Biomename, Map);
+				
 		
 		
 	}
