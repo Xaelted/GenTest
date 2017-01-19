@@ -4,6 +4,9 @@ public class GenPlains extends BiomesGen {
 	public int GetRealHeight (int[][] Heightmap, int r, int c){
 		
 		
+		
+		AvgHeight = this.FindHeight(Heightmap, r, c);
+		
 		return RealHeight;
 	}
 	
@@ -11,16 +14,6 @@ public class GenPlains extends BiomesGen {
 	
 	
 	
-	
-	public int FindHeight (int[][] Heightmap, int r, int c) {
-		
-		
-		
-		
-		
-		
-		
-		return AvgHeight;
-	}
+
 	
 }

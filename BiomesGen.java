@@ -23,6 +23,18 @@ public class BiomesGen {
 		}
 			
 	}
+	
+	public int FindHeight (int[][] Heightmap, int r, int c) {
+		
+		
+		
+		
+		
+		
+		
+		return AvgHeight;
+	}
+	
 }
 	
 	
