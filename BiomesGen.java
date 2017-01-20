@@ -2,7 +2,7 @@
 public class BiomesGen {
 	
 	
-	public int AvgHeight, RealHeight;
+	public static int AvgHeight, RealHeight;
 
 	public BiomesGen () {
 	}
@@ -24,13 +24,32 @@ public class BiomesGen {
 			
 	}
 	
-	public int FindHeight (int[][] Heightmap, int r, int c) {
+	
+	
+	//finds the avg height of the blocks around the current block
+	public static int FindAvgHeight (int[][] Heightmap, int r, int c) {
 		
-		
-		
-		
-		
-		
+		if (r<=0 && c <=0){
+			AvgHeight = (Heightmap[r][c+1]+Heightmap[r+1][c]+Heightmap[r+1][c+1])/8;
+		}
+		else if (r>=Heightmap.length && c>=Heightmap[r].length){
+			AvgHeight = (Heightmap[r-1][c-1]+Heightmap[r-1][c]+Heightmap[r][c-1])/8;
+		}
+		else if (r>=Heightmap.length){
+			AvgHeight = (Heightmap[r-1][c-1]+Heightmap[r-1][c]+Heightmap[r-1][c+1]+Heightmap[r][c-1]+Heightmap[r][c+1])/8;
+		}
+		else if (c>=Heightmap.length){
+			AvgHeight = (Heightmap[r-1][c-1]+Heightmap[r-1][c]+Heightmap[r][c-1]+Heightmap[r+1][c-1]+Heightmap[r+1][c])/8;
+		}
+		else if(r<0) {
+			AvgHeight = (Heightmap[r][c-1]+Heightmap[r][c+1]+Heightmap[r+1][c-1]+Heightmap[r+1][c]+Heightmap[r+1][c+1])/8;
+		}
+		else if (c<0) {
+			AvgHeight = (Heightmap[r-1][c]+Heightmap[r-1][c+1]+Heightmap[r][c+1]+Heightmap[r+1][c]+Heightmap[r+1][c+1])/8;
+		}
+		else {
+			AvgHeight = (Heightmap[r-1][c-1]+Heightmap[r-1][c]+Heightmap[r-1][c+1]+Heightmap[r][c-1]+Heightmap[r][c+1]+Heightmap[r+1][c-1]+Heightmap[r+1][c]+Heightmap[r+1][c+1])/8;
+		}
 		
 		return AvgHeight;
 	}
